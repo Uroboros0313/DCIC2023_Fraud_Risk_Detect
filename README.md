@@ -50,9 +50,15 @@
 - Docker验证环境: `registry.cn-shanghai.aliyuncs.com/tcc-public/python:3`
 - python版本: 3.7.3
 - Docker验证环境镜像打包: [数据竞赛创建Docker环境及复现精简教程](https://zhuanlan.zhihu.com/p/363635536)
+
 ```
 PS: python、包版本、随机数种子相同的情况下有结果集有14个样本不一致
 ```
+
+## 运行说明
+
+- A/B榜单数据放在`raw_data`中
+- 运行`sh ./inference_run.sh`
 
 ## 解决方案
 
