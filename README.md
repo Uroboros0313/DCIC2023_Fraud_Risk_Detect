@@ -77,14 +77,14 @@ PS: python、包版本、随机数种子相同的情况下有结果集有14个�
 
 #### 一层模型
 - 单模: catboost, lightgbm, gbdt, xgboost, histboost, 每一类模型进行十折oof, 每折模型的seed不同, 每一类模型的阈值利用oof确定。
-2. Stacking: catboost, lightgbm, gbdt, xgboost, histboost作为基分类器, 二层分类器用逻辑回归, 十折oof确定阈值。
+-  Stacking: catboost, lightgbm, gbdt, xgboost, histboost作为基分类器, 二层分类器用逻辑回归, 十折oof确定阈值。
 
 #### 二层模型
-1. HardVoting: 上述模型等权进行硬投票
+- HardVoting: 上述模型等权进行硬投票
 
 ## 思路
 
-- 强特征: 交易间隔时间统计值、出入账不同账户个数、交易渠道目标编码的统计值
+- 强特征: 交易间隔时间统计值、出入账不同账户个数、交易渠道目标编码 (训练集内部Leak了, 这实际上是TFIDF的替代特征)的统计值~~
 - 单模A榜最高histboost, 上线分数0.880+
 - 模型融合:
   - Voting融合:   
